@@ -8,12 +8,14 @@
     <meta name="keywords" content="">
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="css/style.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=9133eb49-3a97-4b2d-90be-6b80a97a5036"></script>
     <title>Команда</title>
 </head>
 
+
 <body class="m-page">
     <div class="wrapper">
-        <header class="header">
+        <header class="header _white-bg">
             <div class="container">
                 <div class="header__top">
                     <div class="header__partners">
@@ -197,7 +199,7 @@
                                 <div class="filter-select__current m-select__current">
                                     Все департаменты
                                 </div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <svg class="m-select__arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M4.43057 8.51192C4.70014 8.19743 5.17361 8.161 5.48811 8.43057L12 14.0122L18.5119 8.43057C18.8264 8.16101 19.2999 8.19743 19.5695 8.51192C19.839 8.82642 19.8026 9.29989 19.4881 9.56946L12.4881 15.5695C12.2072 15.8102 11.7928 15.8102 11.5119 15.5695L4.51192 9.56946C4.19743 9.29989 4.161 8.82641 4.43057 8.51192Z" fill="white" />
                                 </svg>
                             </div>
@@ -900,12 +902,15 @@
                                 <div class="subscribe-form__fields">
                                     <fieldset class="fg">
                                         <input type="text" placeholder="Ваше имя">
+                                        <button type="button" class="fg__clear"></button>
                                     </fieldset>
                                     <fieldset class="fg">
                                         <input type="email" placeholder="Ваш E-mail*">
+                                        <button type="button" class="fg__clear"></button>
                                     </fieldset>
                                     <fieldset class="fg">
                                         <input type="text" placeholder="Ваша должность">
+                                        <button type="button" class="fg__clear"></button>
                                     </fieldset>
                                 </div>
                                 <button class="subscribe-form__btn m-btn m-btn-secondary">
@@ -951,6 +956,7 @@
                                 <img src="img/vk.svg" alt="VK">
                             </a>
                         </div>
+
                         <div class="footer__bottom">
                             <div class="footer-action">
                                 <div class="lang">
@@ -1017,14 +1023,14 @@
                         <div class="footer-nav__hidden">
                             <div class="footer-nav__links">
                                 <a href="" class="footer-nav__link">Сведения об образовательной организации</a>
-                                <a href="" class="footer-nav__link">Основные сведения</a>
-                                <a href="" class="footer-nav__link">Правоустанавливающие документы</a>
-                                <a href="" class="footer-nav__link">Локальные нормативные акты</a>
-                                <a href="" class="footer-nav__link">Противодействие коррупции</a>
-                                <a href="" class="footer-nav__link">Противодействие идеологии экстремизма и терроризма</a>
-                                <a href="" class="footer-nav__link">Антимонопольный комплаенс</a>
-                                <a href="" class="footer-nav__link">Деятельность</a>
-                                <a href="" class="footer-nav__link">Контакты</a>
+                                <button data-modal="generalInfoModal" class="footer-nav__link">Основные сведения</button>
+                                <button data-modal="titleDocsModal" class="footer-nav__link">Правоустанавливающие документы</button>
+                                <button data-modal="localDocsModal" class="footer-nav__link">Локальные нормативные акты</button>
+                                <button data-modal="antiCorruptionModal" class="footer-nav__link">Противодействие коррупции</button>
+                                <button data-modal="antiExtremismModal" class="footer-nav__link">Противодействие идеологии экстремизма и терроризма</button>
+                                <button data-modal="antiMonopolyModal" class="footer-nav__link">Антимонопольный комплаенс</button>
+                                <button data-modal="activityModal" class="footer-nav__link">Деятельность</button>
+                                <button data-modal="contactsModal" class="footer-nav__link">Контакты</button>
                             </div>
                         </div>
                     </div>
@@ -1088,6 +1094,1753 @@
 
         </footer>
     </div>
+
+    <div class="modal" id="generalInfoModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="modal__tabs">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div data-modal="generalInfoModal" class="modal__tab tab _active">
+                                <span>Основные сведения</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="docsModal" class="modal__tab tab ">
+                                <span>Документы</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="eduModal" class="modal__tab tab ">
+                                <span>Образование</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="paymentServicesModal" class="modal__tab tab ">
+                                <span>Платные образовательные услуги</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="bossesModal" class="modal__tab tab ">
+                                <span>Руководство и педагогический состав</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="vacantModal" class="modal__tab tab ">
+                                <span>Вакантные места для приема</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="eduStructureModal" class="modal__tab tab ">
+                                <span>Структура и органы управления образовательной организацией</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="financeModal" class="modal__tab tab ">
+                                <span>Финансово-хозяйственная деятельность</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="eduMaterialModal" class="modal__tab tab ">
+                                <span>Материально-техническое обеспечение и оснащенность образовательного процесса</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal__content">
+                <div class="news-article">
+                    <h4>Основные сведения</h4>
+                    <p>ФГБУК «Всероссийский центр развития художественного творчества и гуманитарных технологий» (далее – «ВЦХТ») является единственным учреждением культуры, действующим в подведомственном подчинении Министерства просвещения Российской Федерации, созданный для осуществления образовательных, социальных, методических, организационных и культурных функций в сфере образования и культуры.</p>
+                    <p>Учредителем является Министерство просвещения Российской Федерации.</p>
+                    <p>«ВЦХТ» имеет богатую историю – центр был создан в 1945 году как центр художественного творчества учащихся и работников начального профессионального образования в соответствии с распоряжением Совнаркома СССР. В 2020 году «ВЦХТ» исполнилось 75 лет. За эти годы «ВЦХТ» неоднократно менял свое наименование, уточнялись цели, задачи, но неизменна миссия «ВЦХТ» — оставаться всероссийским центром художественного творчества, образования и культуры детей и молодежи.</p>
+                    <p>В настоящее время «ВЦХТ» — федеральное государственное бюджетное учреждение культуры «Всероссийский центр развития художественного творчества и гуманитарных технологий».</p>
+                    <p>Предметом деятельности «ВЦХТ» являются научно-методическое, экспертное и информационно-аналитическое сопровождение деятельности организаций в сферах образования и культуры; организация и проведение общественно значимых мероприятий в сферах образования и культуры; образовательно-досуговая, культурно-просветительская деятельность и методическое сопровождение развития гуманитарных технологий и художественного творчества.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="titleDocsModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="modal__tabs">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div data-modal="titleDocsModal" class="modal__tab tab _active">
+                                <span>Правоустанавливающие документы</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="localDocsModal" class="modal__tab tab ">
+                                <span>Локальные нормативные акты</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiCorruptionModal" class="modal__tab tab ">
+                                <span>Противодействие коррупции</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiExtremismModal" class="modal__tab tab ">
+                                <span>Противодействие экстремизму</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiMonopolyModal" class="modal__tab tab ">
+                                <span>Антимонопольный комплаенс</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal__content">
+                <div class="modal-docs">
+                    <div class="text24 text20-tablet font2 bold-text">
+                        Правоустанавливающие документы
+                    </div>
+                    <div class="modal-docs__items">
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Устав ФГБУК «ВЦХТ» (изм. от 22.07.2022 № 605 Приказ Министерства просвещения Российской Федерации)
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Лицензия на осуществление образовательной деятельности
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Свидетельство о постановке на учет в налоговом органе
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 22.05.2023
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="localDocsModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="modal__tabs">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div data-modal="titleDocsModal" class="modal__tab tab ">
+                                <span>Правоустанавливающие документы</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="localDocsModal" class="modal__tab tab _active">
+                                <span>Локальные нормативные акты</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiCorruptionModal" class="modal__tab tab ">
+                                <span>Противодействие коррупции</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiExtremismModal" class="modal__tab tab ">
+                                <span>Противодействие экстремизму</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiMonopolyModal" class="modal__tab tab ">
+                                <span>Антимонопольный комплаенс</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal__content">
+                <div class="modal-docs">
+                    <div class="text24 text20-tablet font2 bold-text">
+                        Локальные нормативные акты
+                    </div>
+                    <div class="modal-docs__items">
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Устав ФГБУК «ВЦХТ» (изм. от 22.07.2022 № 605 Приказ Министерства просвещения Российской Федерации)
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Лицензия на осуществление образовательной деятельности
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Свидетельство о постановке на учет в налоговом органе
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 22.05.2023
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="antiCorruptionModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="modal__tabs">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div data-modal="titleDocsModal" class="modal__tab tab ">
+                                <span>Правоустанавливающие документы</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="localDocsModal" class="modal__tab tab ">
+                                <span>Локальные нормативные акты</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiCorruptionModal" class="modal__tab tab _active">
+                                <span>Противодействие коррупции</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiExtremismModal" class="modal__tab tab ">
+                                <span>Противодействие экстремизму</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiMonopolyModal" class="modal__tab tab ">
+                                <span>Антимонопольный комплаенс</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal__content">
+                <div class="anti-corruption">
+                    <div class="anti-corruption__level1">
+                        <div class="text24 text20-tablet font2 bold-text">
+                            Противодействие коррупции
+                        </div>
+                        <div class="anti-corruption__tabs">
+                            <div data-tab="1" class="anti-corruption__tab">
+                                <div class="doc-item__icon">
+                                    <img src="img/doc.svg" alt="">
+                                </div>
+                                <div class="text16 font2 bold-text">
+                                    Нормативные правовые и иные акты в сфере противодействия коррупции
+                                </div>
+                            </div>
+                            <div data-tab="2" class="anti-corruption__tab">
+                                <div class="doc-item__icon">
+                                    <img src="img/doc.svg" alt="">
+                                </div>
+                                <div class="text16 font2 bold-text">
+                                    Антикоррупционная экспертиза
+                                </div>
+                            </div>
+                            <div data-tab="3" class="anti-corruption__tab">
+                                <div class="doc-item__icon">
+                                    <img src="img/doc.svg" alt="">
+                                </div>
+                                <div class="text16 font2 bold-text">
+                                    Формы документов, связанных с противодействием коррупции, для заполнения
+                                </div>
+                            </div>
+                            <div data-tab="4" class="anti-corruption__tab">
+                                <div class="doc-item__icon">
+                                    <img src="img/doc.svg" alt="">
+                                </div>
+                                <div class="text16 font2 bold-text">
+                                    Сведения о доходах, расходах, об имуществе и обязательствах имущественного характера
+                                </div>
+                            </div>
+                            <div data-tab="5" class="anti-corruption__tab">
+                                <div class="doc-item__icon">
+                                    <img src="img/doc.svg" alt="">
+                                </div>
+                                <div class="text16 font2 bold-text">
+                                    Комиссия по противодействию коррупции и урегулированию конфликта интересов
+                                </div>
+                            </div>
+                            <div data-tab="6" class="anti-corruption__tab">
+                                <div class="doc-item__icon">
+                                    <img src="img/doc.svg" alt="">
+                                </div>
+                                <div class="text16 font2 bold-text">
+                                    Обратная связь для сообщений о фактах коррупции
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anti-corruption__level2">
+                        <button class="anti-corruption__back">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5303 5.46967C10.8232 5.76256 10.8232 6.23744 10.5303 6.53033L5.81066 11.25H20C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75H5.81066L10.5303 17.4697C10.8232 17.7626 10.8232 18.2374 10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303L3.46967 12.5303C3.17678 12.2374 3.17678 11.7626 3.46967 11.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967Z" fill="#868686" />
+                            </svg>
+                            <span>Назад</span>
+                        </button>
+                        <div data-tab="1" class="anti-corruption__content _active">
+                            <div class="modal-docs">
+                                <div class="text24 text20-tablet font2 bold-text">
+                                    Нормативные правовые и иные акты в сфере противодействия коррупции
+                                </div>
+                            </div>
+                            <div class="modal-docs">
+                                <div class="text20 text18-tablet font2 bold-text">
+                                    Федеральные законы, указы Президента Российской Федерации, постановления Правительства Российской Федерации и иные нормативно-правовые акты по вопросам противодействия коррупции:
+                                </div>
+                                <div class="modal-docs__items">
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="modal-docs">
+                                <div class="text20 text18-tablet font2 bold-text">
+                                    Судебные акты
+                                </div>
+                                <div class="modal-docs__items">
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="modal-docs">
+                                <div class="text20 text18-tablet font2 bold-text">
+                                    2021
+                                </div>
+                                <div class="modal-docs__items">
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div data-tab="2" class="anti-corruption__content">
+                            <div class="modal-docs">
+                                <div class="text24 text20-tablet font2 bold-text">
+                                    Антикоррупционная экспертиза
+                                </div>
+                            </div>
+                            <a href="" class="anti-corruption__item">
+                                <div class="text18 text16-tablet bold-text font2">
+                                    Доступ к официальному сайту, созданному для размещения информации о подготовке федеральными органами исполнительной власти проектов нормативных правовых актов и результатах их общественного обсуждения
+                                </div>
+                                <div class="arrow-btn__icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                        <div data-tab="3" class="anti-corruption__content">
+                            <div class="modal-docs">
+                                <div class="_full text24 text20-tablet font2 bold-text">
+                                    Формы документов, связанных с противодействием коррупции, для заполнения
+                                </div>
+                            </div>
+                            <div class="modal-docs">
+                                <div class="modal-docs__text text18 text16-tablet">
+                                    В соответствии с подпунктом «ж» пункта 1 <a href="">Указа Президента Российской Федерации</a> и от 29 декабря 2022 г. № 968 «Об особенностях исполнения обязанностей, соблюдения ограничений и запретов в области противодействия коррупции некоторыми категориями граждан в период проведения специальной военной операции» на официальных сайтах органов публичной власти и организаций в сети «Интернет» и их предоставление общероссийским СМИ для опубликования не осуществляется.
+                                </div>
+                            </div>
+                            <div class="modal-docs">
+                                <div class="modal-docs__items">
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Дополнение к плану работ по выполнению государственного задания № 073-00078-22-06 на 2022 год и на плановый период 2023 и 2024 годов
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 22.05.2023
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div data-tab="4" class="anti-corruption__content">
+                            <div class="modal-docs">
+                                <div class="_full text24 text20-tablet font2 bold-text">
+                                    Сведения о доходах, расходах, об имуществе и обязательствах имущественного характера
+                                </div>
+                            </div>
+                            <div class="modal-docs">
+                                <div class="modal-docs__text text18 text16-tablet">
+                                    В соответствии с подпунктом «ж» пункта 1 <a href="">Указа Президента Российской Федерации</a> и от 29 декабря 2022 г. № 968 «Об особенностях исполнения обязанностей, соблюдения ограничений и запретов в области противодействия коррупции некоторыми категориями граждан в период проведения специальной военной операции» на официальных сайтах органов публичной власти и организаций в сети «Интернет» и их предоставление общероссийским СМИ для опубликования не осуществляется.
+                                </div>
+                            </div>
+                            <div class="modal-docs">
+                                <div class="modal-docs__items">
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Дополнение к плану работ по выполнению государственного задания № 073-00078-22-06 на 2022 год и на плановый период 2023 и 2024 годов
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 22.05.2023
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                    <a href="" class="doc-item doc-item2">
+                                        <div class="doc-item__icon">
+                                            <img src="img/doc.svg" alt="">
+                                        </div>
+                                        <div class="text16 font2 semi-bold-text">
+                                            Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                                        </div>
+                                        <div class="arrow-btn">
+                                            <span class="arrow-btn__title">
+            pdf
+        </span>
+                                            <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div data-tab="5" class="anti-corruption__content">
+                            <div class="news-article">
+                                <h4>Комиссия по противодействии коррупции и урегулированию конфликта интересов ФГБУК «ВЦХТ»</h4>
+                                <p>
+                                    Состав комиссии по противодействию коррупции и урегулированию конфликта интересов ФГБУК «ВЦХТ» в соответствии с
+                                    <br>
+                                    <a href="">Приказом ФГБУК «ВЦХТ» от 25.07.2022 № 25-03/2023</a>:
+                                </p>
+                                <p><b>1. Председатель комиссии по противодействию коррупции</b> – заместитель директора по финансово-экономической деятельности и цифровизации – Ждан Александр Александрович.</p>
+                                <p><b>2. Заместитель председателя комиссии по противодействию коррупции</b> – начальник отдела кадров – Абашкова Татьяна Викторовна;</p>
+                                <p><b>3. Члены комиссии по противодействию коррупции:</b></p>
+                                <p>
+                                    — заместитель директора по региональному и международному сотрудничеству – Горина Анна Сергеевна;
+                                    <br>
+                                — заместитель директора по административно-хозяйственной работе – Феклин Геннадий Иванович;
+                                    <br>
+                                — начальник юридического отдела – Гончарова Валентина Кахаберовна; <br>
+                                — юрисконсульт – Сехин Никита Сергеевич; <br>
+                                — начальник общего отдела, секретарь комиссии – Корпуснова Юлия Алексеевна. <br>
+                                </p>
+                            </div>
+                        </div>
+                        <div data-tab="6" class="anti-corruption__content">
+                            <div class="news-article">
+                                <h4>Обратная связь для сообщений о фактах коррупции</h4>
+                                <p>В целях реализации антикоррупционных мероприятий, проводимых ФГБУК «ВЦХТ», запретов, ограничений, обязательств и правил служебного поведения и формирования в обществе нетерпимости к коррупционному поведению в ФГБУК «ВЦХТ» могут быть направлены обращения в письменной форме в адрес ФГБУК «ВЦХТ» телеграммой, факсограммой, почтовым отправлением, доставкой средствами почтовой, фельдъегерской, курьерской связи, через почтовый ящик, находящийся в здании ФГБУК «ВЦХТ» по адресу: 115114, Москва, Дербеневская ул, 16, ФГБУК «ВЦХТ» или по адресу электронной почты info@vcht.ru.</p>
+                                <p>Работа с поступившими обращениями граждан и организаций осуществляется в соответствии с требованиями нормативных правовых актов.</p>
+                                <p>Перед направлением обращения рекомендуем ознакомиться с правилами приёма сообщений, изложенных в федеральном законе от 2 мая 2006 г. № 59-ФЗ «О порядке рассмотрения обращений граждан Российской Федерации» и от 27 июля 2006 г. № 152-ФЗ «О персональных данных» и со статьей 306 Уголовного кодекса Российской Федерации.</p>
+                                <h5>Правила приема сообщений</h5>
+                                <p>По вопросам противодействия коррупции принимается и рассматривается информация о фактах:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="antiExtremismModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="modal__tabs">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div data-modal="titleDocsModal" class="modal__tab tab ">
+                                <span>Правоустанавливающие документы</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="localDocsModal" class="modal__tab tab ">
+                                <span>Локальные нормативные акты</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiCorruptionModal" class="modal__tab tab ">
+                                <span>Противодействие коррупции</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiExtremismModal" class="modal__tab tab _active">
+                                <span>Противодействие экстремизму</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiMonopolyModal" class="modal__tab tab ">
+                                <span>Антимонопольный комплаенс</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal__content">
+                <div class="modal-docs">
+                    <div class="text24 text20-tablet font2 bold-text">
+                        Противодействие экстремизму и терроризму
+                    </div>
+                    <div class="modal-docs__items">
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Устав ФГБУК «ВЦХТ» (изм. от 22.07.2022 № 605 Приказ Министерства просвещения Российской Федерации)
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Лицензия на осуществление образовательной деятельности
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Свидетельство о постановке на учет в налоговом органе
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 22.05.2023
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="antiMonopolyModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="modal__tabs">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div data-modal="titleDocsModal" class="modal__tab tab ">
+                                <span>Правоустанавливающие документы</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="localDocsModal" class="modal__tab tab ">
+                                <span>Локальные нормативные акты</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiCorruptionModal" class="modal__tab tab ">
+                                <span>Противодействие коррупции</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiExtremismModal" class="modal__tab tab ">
+                                <span>Противодействие экстремизму</span>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div data-modal="antiMonopolyModal" class="modal__tab tab _active">
+                                <span>Антимонопольный комплаенс</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal__content">
+                <div class="modal-docs">
+                    <div class="text24 text20-tablet font2 bold-text">
+                        Антимонопольный комплаенс
+                    </div>
+                    <div class="modal-docs__items">
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="activityModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="text24 text20-tablet font2 bold-text">
+                Деятельность
+            </div>
+            <div class="modal__content">
+                <div class="modal-docs">
+                    <div class="text20 text18-tablet font2 bold-text">
+                        Государственные задания, планы работ по выполнению и отчеты:
+                    </div>
+                </div>
+                <div class="modal-docs">
+                    <div class="text20 text18-tablet font2 bold-text">
+                        2023
+                    </div>
+                    <div class="modal-docs__items">
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="modal-docs">
+                    <div class="text20 text18-tablet font2 bold-text">
+                        2022
+                    </div>
+                    <div class="modal-docs__items">
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                        <a href="" class="doc-item doc-item2">
+                            <div class="doc-item__icon">
+                                <img src="img/doc.svg" alt="">
+                            </div>
+                            <div class="text16 font2 semi-bold-text">
+                                Выписка из Единого государственного реестра юридических лиц — 27.07.2021
+                            </div>
+                            <div class="arrow-btn">
+                                <span class="arrow-btn__title">
+            pdf
+        </span>
+                                <span class="arrow-btn__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+        </span>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="contactsModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="contacts">
+                <div class="contacts__col">
+                    <div class="text24 text20-tablet font2 bold-text">
+                        Контакты
+                    </div>
+                    <div class="contacts__items">
+                        <div class="contact-item _full">
+                            <div class="contact-item__title text18 font2 bold-text">
+                                Почтовый адрес
+                            </div>
+                            <div class="contact-item__desc">
+                                <div class="text16">115114, Москва, Дербеневская ул, 16, ФГБУК «Всероссийский центр развития художественного творчества и гуманитарных технологий»</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item__title text18 font2 bold-text">
+                                Телефон
+                            </div>
+                            <div class="contact-item__desc">
+                                <a href="tel:+74992350372" class="text16">
+                                    +7 (499) 235-03-72
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item__title text18 font2 bold-text">
+                                График работы
+                            </div>
+                            <div class="contact-item__desc">
+                                <div class="text16">10:00 — 19:00 (пн-пт)</div>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item__title text18 font2 bold-text">
+                                Email
+                            </div>
+                            <div class="contact-item__desc">
+                                <a href="mailt:info@vcht.ru" class="text16">info@vcht.ru</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item__title text18 font2 bold-text">
+                                Контакты ВЦХТ
+                            </div>
+                            <div class="contact-item__desc">
+                                <a href="" class="arrow-btn">
+                                    <span class="arrow-btn__title">
+                                    pdf
+                                </span>
+                                    <span class="arrow-btn__icon">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 15L15 5M15 5H7.5M15 5V12.5" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item__title text18 font2 bold-text">
+                                Мы в социальных сетях
+                            </div>
+                            <div class="contact-item__desc">
+                                <div class="socials">
+                                    <a href="" class="socials__item">
+                                        <img src="img/ok.svg" alt="OK">
+                                    </a>
+                                    <a href="" class="socials__item">
+                                        <img src="img/telegram.svg" alt="Telegram">
+                                    </a>
+                                    <a href="" class="socials__item">
+                                        <img src="img/vk.svg" alt="VK">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts__col">
+                    <div class="map" data-cord1="55.722892" data-cord2="37.648007"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal2" id="reqModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="text32 text24-tablet font2 bold-text">
+                Оставить заявку на курс
+            </div>
+            <form action="" class="modal-form">
+                <fieldset class="fg">
+                    <input type="text" placeholder="Ваше ФИО">
+                </fieldset>
+                <fieldset class="fg">
+                    <input type="email" placeholder="Ваш e-mail">
+                </fieldset>
+                <fieldset class="fg">
+                    <input class="international-phone" type="text">
+                </fieldset>
+                <fieldset class="fg">
+                    <input type="text" placeholder="Место работы">
+                </fieldset>
+                <fieldset class="fg">
+                    <input type="text" placeholder="Ваша должность">
+                </fieldset>
+                <button class="m-btn m-btn-primary">
+                    <span>Записаться на курс</span>
+                </button>
+            </form>
+            <div class="modal-form__hint">
+                <div class="text14 grey-text medium-text">
+                    Нажимая на кнопку, вы соглашаетесь с условиями политики обработки персональных данных
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal2" id="teamModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="text32 text24-tablet font2 bold-text">
+                Станьте частью команды экспертов ВЦХТ!
+            </div>
+            <form action="" class="modal-form">
+                <fieldset class="fg">
+                    <input type="text" placeholder="Ваше ФИО">
+                </fieldset>
+                <fieldset class="fg">
+                    <input type="email" placeholder="Ваш e-mail">
+                </fieldset>
+                <fieldset class="fg">
+                    <input class="international-phone" type="text">
+                </fieldset>
+                <fieldset class="fg">
+                    <input type="text" placeholder="Сфера деятельности">
+                </fieldset>
+                <fieldset class="files">
+                    <div class="file-input _file-upload">
+                        <input type="file">
+                        <span class="file-input__title">Ваше резюме</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.88558 3.36262C11.8283 0.545795 16.5864 0.545795 19.5291 3.36262C22.4903 6.19714 22.4903 10.807 19.5291 13.6415L11.581 21.2495C9.49097 23.2502 6.11532 23.2502 4.02525 21.2495C1.91669 19.2312 1.91669 15.9446 4.02525 13.9263L11.859 6.42771C13.0964 5.24324 15.0896 5.24325 16.327 6.42771C17.5829 7.62989 17.5829 9.59316 16.327 10.7953L8.43612 18.3486C8.13689 18.635 7.66213 18.6247 7.37571 18.3254C7.08929 18.0262 7.09967 17.5515 7.39889 17.265L15.2898 9.71175C15.9286 9.10021 15.9286 8.12285 15.2898 7.5113C14.6324 6.88205 13.5536 6.88205 12.8962 7.5113L5.06248 15.0098C3.57095 16.4376 3.57095 18.7382 5.06248 20.1659C6.57251 21.6114 9.03377 21.6114 10.5438 20.1659L18.4919 12.5579C20.836 10.314 20.836 6.6901 18.4919 4.4462C16.1292 2.1846 12.2855 2.1846 9.9228 4.4462L3.51861 10.5764C3.21939 10.8628 2.74463 10.8524 2.45821 10.5532C2.17179 10.254 2.18216 9.77924 2.48139 9.49281L8.88558 3.36262Z" fill="#F98641" />
+                        </svg>
+                    </div>
+                </fieldset>
+                <button class="m-btn m-btn-primary">
+                    <span>Записаться на курс</span>
+                </button>
+            </form>
+            <div class="modal-form__hint">
+                <div class="text14 grey-text medium-text">
+                    Нажимая на кнопку, вы соглашаетесь с условиями политики обработки персональных данных
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal2 course-modal" id="courseModal" aria-hidden="true">
+        <div class="modal__bg"></div>
+        <button type="button" class="modal__close close-btn" aria-label="Close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23 23L9 9" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M23 9L9 23" stroke="#191715" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <div class="modal__dialog">
+            <div class="course-modal__top">
+                <div class="text32 text24-tablet font2 bold-text">
+                    Успейте купить курс с максимальной выгодой
+                </div>
+                <div class="text2">
+                    <p>Ты можешь приобрести курс двуми способами:</p>
+                    <ul>
+                        <li>Оплатить курс целиком</li>
+                        <li>Оставить заявку на консультацию</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-card__top">
+                    <div class="product-card__img">
+                        <img src="img/edu.webp" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <div class="text18 text16-tablet bold-text font2">
+                            Нормативно-методические и <br> организационно управленческие механизмы внедрения Целевой модели развития региональных систем дополнительного образования детей
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-prices__items">
+                    <div class="edu-prices__item _price1">
+                        16 600 ₽
+                    </div>
+                    <div class="edu-prices__item _price2">
+                        2 398 ₽
+                    </div>
+                </div>
+            </div>
+            <div class="course-modal__nav">
+                <button class="m-btn m-btn-primary">
+                    <span>Записаться</span>
+                </button>
+                <button class="m-btn m-btn-primary-outline">
+                    <span>Получить консультацию</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="modal-backdrop show"></div> -->
 
     <script src="js/libs.min.js"></script>
     <script src="js/main.min.js"></script>
